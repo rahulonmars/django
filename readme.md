@@ -1,1 +1,1 @@
-This project will contain my customisation with Django and over the time learning. :)
+This project will contain my customisation with Django and over the time and learning. :)
