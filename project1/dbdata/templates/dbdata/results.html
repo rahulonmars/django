@@ -1,0 +1,11 @@
+{% extends 'dbdata/base.html' %}
+
+{% block details %}
+    {% for name1 in all_data %}
+        {% comment %} <p> Name: {{ name.fname }} <p> {% endcomment %}
+        <h2>
+            <a href="{% url 'detailed' data=name1.fname %}">URL</a><br>Date Created: {{ name1.c_date }}
+        </h2>
+        {% comment %} {{ name1 }} {% endcomment %}
+    {% endfor %}
+{% endblock  %}
