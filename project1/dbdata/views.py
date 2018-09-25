@@ -1,9 +1,10 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from datetime import datetime
 # Create your views here.
 
 from django.http import HttpResponse
 from .models import Table1, Table2
+from .forms import Form
 
 def index(request):
     return HttpResponse(content="Hi You are at the index of dbdata app")
@@ -32,3 +33,19 @@ def result_detailed(request, data):
     return render(request, 'dbdata/result_detail.html', {'name':name, 'user_data':user_data})
     # response = "Results for name %s."
     # return HttpResponse(response % name)
+
+
+def details_new(request):
+    print ("Request Method is: ",request.method)
+    if request.method == "POST":
+        form = Form(request.POST)
+        if form.is_valid():
+            new_entry = form.save(commit=True)
+            return redirect('detailed',data=new_entry.fname)
+    else:
+            # print ("Form Details Submitted: ",form)
+        form = Form()
+    return render(request, 'dbdata/details_new.html', {'form':form})
+    # response = "Results for name %s."
+    # return HttpResponse(response % name)
+    

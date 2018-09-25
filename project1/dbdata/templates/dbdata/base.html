@@ -3,12 +3,16 @@
     <head>
         <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="{% static 'css/dbdata.css' %}">
-        {% comment %} <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> {% endcomment %}
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <title> DBDATA APP </title>
     </head>
 <body>
-<!--    <h1> Heading 1 </h1>
+    <div class="page-header">
+
+        <a href="{% url 'table_1' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+    </div>
+<!--    <h1></dialog> Heading 1 </h1>
     <h2> Heading 1 </h2>
     <h3> Heading 1 </h3>
     <h4> Heading 1 </h4>
@@ -16,6 +20,7 @@
      -->
     {% comment %} <p>Hi ! {{ name }}</p> {% endcomment %}
     {% block details %}
+    <a href="{% url 'table_1' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
     {% endblock  %}
     {% comment %} <p>All Results: {{ all_data }}</p> {% endcomment %}
     <!-- <p>It works!</p>

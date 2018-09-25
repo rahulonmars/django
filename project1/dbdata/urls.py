@@ -8,4 +8,5 @@ urlpatterns = [
     path('results/', views.results, name = 'results'),
     # path('<str:name>/', views.details, name = 'details'),
     path('details/<str:data>/', views.result_detailed, name = 'detailed'),
+    path('new/', views.details_new, name = 'table_1'),
 ]
